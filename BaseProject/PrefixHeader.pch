@@ -1,0 +1,73 @@
+//
+//  PrefixHeader.pch
+//  BaseProject
+//
+//  Created by lijunjie on 2017/4/17.
+//  Copyright © 2017年 dev. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* PrefixHeader_pch */
+#ifdef __OBJC__
+#import "UIColor+ColorChange.h"
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#import <CommonCrypto/CommonDigest.h>
+#import "UIView+AutoLayout.h"
+#import "AFNetworking.h"
+#import "UIImage+GIF.h"
+//#import "AFHTTPSessionManager.h"
+#import "UIColor+expanded.h"
+#import "UIImage+Common.h"
+#import "NSObject+Common.h"
+#import "AppDelegate.h"
+#import "HttpManagerPort.h"
+#import "JRToast.h"
+//#import "UIImageView+WebCache.h"
+#import "UIViewExt.h"
+#import "MJRefresh.h"
+#import "RDVTabBarController.h"
+#import "Check.h"
+#import "Reachability.h"
+#import "MBProgressHUD.h"
+#import "SVProgressHUD.h"
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+#import "LoginViewController.h"
+#import "CustomeWebViewNoNavController.h"
+#import "ZZLProgressHUD.h"
+#import "WebViewJS.h"
+#import <ShareSDK/ShareSDK.h>
+#import "MoviePlayerViewController.h"
+#import "WXApi.h"
+#import <AlipaySDK/AlipaySDK.h>
+#import "CustomWebViewController.h"
+#import "MoviewToWebViewController.h"
+#endif
+#define URL_APPID @"wx0727f2b6b7a9e1e1"
+#define kScreen_Height [UIScreen mainScreen].bounds.size.height
+#define kScreen_Width [UIScreen mainScreen].bounds.size.width
+#define kScreen_Bounds [UIScreen mainScreen].bounds
+#define SYSTEMFONT(FONTSIZE)     [UIFont systemFontOfSize:FONTSIZE]
+#define IMAGENAMED(NAME)       [UIImage imageNamed:NAME]
+#define DesignWidth 750.0
+#define DesignHeight 1334.0
+/* 判定字符串是否为空 */
+#define STRING_ISNIL(__POINTER) (__POINTER == nil || [__POINTER isEqualToString:@""])?YES:NO
+#define STRING_ISNOTNIL(__POINTER) (__POINTER == nil || [__POINTER isEqualToString:@""])?NO:YES
+#define GetWidth(width)  (width)/DesignWidth*kScreen_Width
+#define GetHeight(height) (kScreen_Height > 568 ? (height)/DesignHeight*kScreen_Height : (height)/DesignHeight*568)
+ #define RGB(a,b,c) [UIColor colorWithRed:(a/255.0) green:(b/255.0) blue:(c/255.0) alpha:1.0]
+ #define RGBA(a,b,c,d) [UIColor colorWithRed:(a/255.0) green:(b/255.0) blue:(c/255.0) alpha:d]
+#define showAlert(msg) [[[UIAlertView alloc]initWithTitle:nil message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil] show];
+#define DebugLog(s, ...) NSLog(@"%s(%d): %@", __FUNCTION__, __LINE__, [NSString stringWithFormat:(s), ##__VA_ARGS__])
+#define kKeyWindow [UIApplication sharedApplication].keyWindow
+#define kNetManager [HttpManagerPort sharedHttpManagerPort]
+#define kBaseUrl @"http://hongpei.zilankeji.com"
+#define DEFAULTS [NSUserDefaults standardUserDefaults]
+#define Http_Base_UrlPic @"http://www.tlsesc.com"
